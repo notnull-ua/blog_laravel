@@ -6,6 +6,9 @@
  */
 
 require('./bootstrap');
+//require('../../../vendor/components/jquery/jquery.min.js');
+//require('../../../vendor/twbs/bootstrap/assets/js/vendor/popper.min');
+//require('../../../vendor/twbs/bootstrap/dist/js/bootstrap.min');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

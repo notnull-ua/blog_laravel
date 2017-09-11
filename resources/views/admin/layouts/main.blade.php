@@ -28,21 +28,23 @@
 <body>
 
 <header class="header">
-    @include('/common/head')
+    @include('admin/common/head')
     @yield('head')
 </header>
 <aside>
-    @yield('leftbar')
+    @yield('rightbar')
 </aside>
 
-<main class="main">
+<main class="container">
     @yield('content')
 </main>
 
 <footer class="footer">
-    @include('../common/footer')
     @yield('footer')
-    <script src="{{asset('js/app.js')}}"></script>
+    @include('admin/common/footer')
+    <div id="app"></div>
+    <script src="{{asset('js/all.js')}}"></script>
+
 </footer>
 
 </body>

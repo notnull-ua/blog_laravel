@@ -4,4 +4,5 @@
  * User: vlad
  * Date: 26.07.17
  * Time: 12:17
- */
+ */ ?>
+head layout

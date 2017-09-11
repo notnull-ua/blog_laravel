@@ -11,10 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('test',function (){
+Route::get('test', function () {
     return "Hello, world";
 });
-Route::get('test/{name}',"TestController@sayHello");
+Route::get('test/{name}', "TestController@sayHello");
+
+
+// this group routs  for admin panel
+Route::group([
+    'prefix' => 'admin',
+    'namespace' => 'admin',
+    'as' => 'admin.'
+],
+    function () {
+        //this routs for admin panel
+        Route::get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
+    });
