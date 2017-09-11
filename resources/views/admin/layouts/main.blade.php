@@ -31,19 +31,24 @@
     @include('admin/common/head')
     @yield('head')
 </header>
-<aside>
-    @yield('rightbar')
-</aside>
+<div class="container-fluid">
+    <div class="row">
+        <aside class="col-3">
+            @yield('leftbar')
+        </aside>
+        <main class="content-container col-9">
+            @yield('content')
+        </main>
+    </div>
+</div>
 
-<main class="container">
-    @yield('content')
-</main>
 
 <footer class="footer">
     @yield('footer')
     @include('admin/common/footer')
     <div id="app"></div>
     <script src="{{asset('js/all.js')}}"></script>
+
 
 </footer>
 
