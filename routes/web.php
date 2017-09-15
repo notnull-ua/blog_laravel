@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('test', function () {
     return "Hello, world";
 });
@@ -26,4 +25,16 @@ Route::group([
     function () {
         //this routs for admin panel
         Route::get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
+        Route::group([
+            'prefix' => 'category',
+            'as' => 'category.'
+        ], function (){
+            Route::get('/',['uses' => 'CategoryController@index']);
+            Route::get('create',['uses' => 'CategoryController@create']);
+            Route::get('update/{id}',['uses' => 'CategoryController@update']);
+            Route::get('delete/{id}',['uses' => 'CategoryController@delete']);
+            Route::post('store',['as'=> 'store','uses' => 'CategoryController@store']);
+        });
+
+
     });

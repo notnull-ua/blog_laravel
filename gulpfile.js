@@ -16,8 +16,15 @@ require('laravel-elixir-vue-2');
 elixir(function (mix) {
     mix.sass([
         'app.scss',
-        './vendor/twbs/bootstrap/scss/bootstrap.scss'])
+        './vendor/twbs/bootstrap/scss/bootstrap.scss',
+
+
+    ])
         .webpack([
             'app.js'
         ])
+        .styles([
+            './bower_components/glyphicons/styles/glyphicons.css'
+        ])
+        .copy('./bower_components/glyphicons/fonts','public/fonts')
 });
